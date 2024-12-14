@@ -33,5 +33,5 @@ install: clean
 uninstall: clean
 	pip uninstall rephrasinator -y
 
-run:
-	python3 -m rephrasinator.cli --help
+run: install
+	rephrasinator --help

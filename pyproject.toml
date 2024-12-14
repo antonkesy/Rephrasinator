@@ -6,31 +6,26 @@ build-backend = "setuptools.build_meta"
 name = "rephrasinator"
 version = "0.1.0"
 description = "Rephrase simple sentences ... AI goes BRRRRR"
-readme = "README.rst"
-authors = [
-  {name = "Anton Kesy", email = "antonkesy@gmail.com"}
+readme = "README.md"
+authors = [ {name = "Anton Kesy", email = "antonkesy@gmail.com"} ]
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
 ]
-maintainers = [
-  {name = "Anton Kesy", email = "antonkesy@gmail.com"}
-]
-classifiers = []
 license = {text = "MIT license"}
 dependencies = [
-  "typer"
-]
-
-[project.optional-dependencies]
-dev = [
-    "pytest",
+  "pytest==8.3.3",
+  "typer==0.15.1",
+  "langchain==0.1.16",
+  "langchain-openai==0.1.4",
+  "langchain-community==0.0.34"
 ]
 
 [project.urls]
 bugs = "https://github.com/antonkesy/rephrasinator/issues"
-changelog = "https://github.com/antonkesy/rephrasinator/blob/master/changelog.md"
 homepage = "https://github.com/antonkesy/rephrasinator"
 
-[tool.setuptools]
-package-dir = {"" = "src"}
-
-[tool.setuptools.package-data]
-"*" = ["*.*"]
+[project.scripts]
+rephrasinator = "rephrasinator.cli:main"
