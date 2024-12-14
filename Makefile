@@ -40,7 +40,7 @@ run: install
 	rephrasinator --help
 
 demo: install
-	rephrasinator text "Hello, world!" --model "llama3.2:3b" --style "Angry"
+	rephrasinator text "Ollama can run with GPU acceleration inside Docker containers for Nvidia GPUs." --model "llama3.2:3b" --additional_request "Make the new sentences angry"
 
 models: install
 	rephrasinator list-models

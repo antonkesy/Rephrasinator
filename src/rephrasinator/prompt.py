@@ -5,14 +5,17 @@ from langchain.prompts import PromptTemplate
 
 def get_prompt(
     sentence_to_rephrase: str,
-    desired_style: Optional[str],
+    additional_request: Optional[str],
 ) -> PromptTemplate:
     return PromptTemplate.from_template(
-        _get_prompt_text(sentence_to_rephrase, desired_style),
+        _get_prompt_text(sentence_to_rephrase, additional_request),
     )
 
 
-def _get_prompt_text(sentence_to_rephrase: str, desired_style: Optional[str]) -> str:
+def _get_prompt_text(
+    sentence_to_rephrase: str,
+    additional_request: Optional[str],
+) -> str:
     return f"""
             Rephrase the following sentence: {sentence_to_rephrase}.
             Number them from 1 to 10 in style: '1. TEXT'
@@ -21,7 +24,7 @@ def _get_prompt_text(sentence_to_rephrase: str, desired_style: Optional[str]) ->
             Don't add any extra information.
             Don't add extra newlines.
             """ + (
-        f"Give multiple rephrasings in the style of {desired_style}."
-        if desired_style is not None
+        f"Give multiple rephrasings and please also: {additional_request}."
+        if additional_request is not None
         else ""
     )

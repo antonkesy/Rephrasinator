@@ -8,10 +8,10 @@ from rephrasinator.prompt import get_prompt
 
 def get_rephrased_sentence(
     sentence_to_rephrase: str,
-    desired_style: Optional[str],
+    additional_request: Optional[str],
     model=LLMModel.PHI314B,
 ) -> str:
-    prompt = get_prompt(sentence_to_rephrase, desired_style)
+    prompt = get_prompt(sentence_to_rephrase, additional_request)
     chain = LLMChain(
         llm=get_langchain_model(model),
         prompt=prompt,
