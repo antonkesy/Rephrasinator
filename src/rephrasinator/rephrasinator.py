@@ -2,7 +2,7 @@ from typing import Optional
 
 from langchain.chains import LLMChain
 
-from rephrasinator.model import LLMModel, get_model
+from rephrasinator.model import LLMModel, get_langchain_model
 from rephrasinator.prompt import get_prompt
 
 
@@ -13,7 +13,7 @@ def get_rephrased_sentence(
 ) -> str:
     prompt = get_prompt(sentence_to_rephrase, desired_style)
     chain = LLMChain(
-        llm=get_model(model),
+        llm=get_langchain_model(model),
         prompt=prompt,
     )
     response = chain.invoke({input: prompt})

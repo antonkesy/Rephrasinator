@@ -1,4 +1,4 @@
-.PHONY: clean clean-build clean-pyc clean-test install dependencies uninstall
+.PHONY: clean clean-build clean-pyc clean-test install dependencies uninstall models model_local_install
 
 clean: clean-build clean-pyc clean-test
 
@@ -40,7 +40,15 @@ run: install
 	rephrasinator --help
 
 demo: install
-	rephrasinator text "Hello, world!" --model "Phi" --style "Angry"
+	rephrasinator text "Hello, world!" --model "llama3.2:3b" --style "Angry"
 
 models: install
 	rephrasinator list-models
+
+model_local_install:
+	ollama pull phi3:14b
+	ollama pull llama3.3:70b
+	ollama pull llama3.2:1b
+	ollama pull llama3.2:3b
+	ollama pull mistral:7b
+	ollama pull gemma:7b
