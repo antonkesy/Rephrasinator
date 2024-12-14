@@ -28,4 +28,4 @@ bugs = "https://github.com/antonkesy/rephrasinator/issues"
 homepage = "https://github.com/antonkesy/rephrasinator"
 
 [project.scripts]
-rephrasinator = "rephrasinator.cli:main"
+rephrasinator = "rephrasinator.cli:app"

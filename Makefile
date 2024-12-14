@@ -27,6 +27,9 @@ test:
 install-dev:
 	pip install -e .[dev]
 
+run-dev:
+	rephrasinator
+
 install: clean
 	pip install .
 
@@ -35,3 +38,9 @@ uninstall: clean
 
 run: install
 	rephrasinator --help
+
+demo: install
+	rephrasinator text "Hello, world!" --model "Phi" --style "Angry"
+
+models: install
+	rephrasinator list-models
