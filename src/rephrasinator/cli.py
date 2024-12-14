@@ -1,4 +1,5 @@
 """Console script for rephrasinator."""
+
 import rephrasinator
 
 import typer
@@ -11,10 +12,10 @@ console = Console()
 @app.command()
 def main():
     """Console script for rephrasinator."""
-    console.print("Replace this message by putting your code into "
-               "rephrasinator.cli.main")
+    console.print(
+        "Replace this message by putting your code into " "rephrasinator.cli.main"
+    )
     console.print("See Typer documentation at https://typer.tiangolo.com/")
-    
 
 
 if __name__ == "__main__":
