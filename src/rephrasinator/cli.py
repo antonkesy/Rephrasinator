@@ -1,9 +1,9 @@
 """Console script for rephrasinator."""
 
-import rephrasinator
-
 import typer
 from rich.console import Console
+
+import rephrasinator
 
 app = typer.Typer()
 console = Console()
@@ -13,7 +13,7 @@ console = Console()
 def main():
     """Console script for rephrasinator."""
     console.print(
-        "Replace this message by putting your code into " "rephrasinator.cli.main"
+        "Replace this message by putting your code into " "rephrasinator.cli.main",
     )
     console.print("See Typer documentation at https://typer.tiangolo.com/")
 
