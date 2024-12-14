@@ -40,7 +40,7 @@ run: install
 	rephrasinator --help
 
 demo: install
-	rephrasinator text "Ollama can run with GPU acceleration inside Docker containers for Nvidia GPUs." --model "llama3.2:3b" --additional_request "Make the new sentences angry"
+	rephrasinator text "This python CLI tools can quickly help you rephrase sentences." --model "llama3.2:3b" --additional_request "Make it sound professional."
 
 models: install
 	rephrasinator list-models
