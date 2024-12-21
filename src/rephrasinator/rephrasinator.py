@@ -8,7 +8,7 @@ from rephrasinator.prompt import get_prompt
 
 def get_rephrased_sentence(
     sentence_to_rephrase: str,
-    additional_request: Optional[str],
+    additional_request: Optional[str] = None,
     model=LLMModel.PHI314B,
 ) -> List[str]:
     prompt = get_prompt(sentence_to_rephrase, additional_request)
